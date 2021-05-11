@@ -51,6 +51,7 @@ namespace JsonHashing.WebApi.Controllers
             using (StreamReader sr = new StreamReader(Request.Body))
             {
                 string requestbody = await sr.ReadToEndAsync();
+
                 JObject request = JsonConvert.DeserializeObject<JObject>(requestbody,new JsonSerializerSettings()
                 {
                       FloatFormatHandling = FloatFormatHandling.String,
